@@ -1,0 +1,39 @@
+//Quick Sort pseudo-code
+//source=https://www.tutorialspoint.com/data_structures_algorithms/quick_sort_algorithm.htm
+
+//partition part
+function partition Func(left,right,pivot)
+leftPointer=left
+rightPointer=right-1
+
+while True do
+while A[++leftPointer]<pivot do
+end while
+
+while rightPointer>0 && A[--rightPointer]>pivot do
+end while
+
+if leftPointer>=rightPointer
+break
+else
+swap leftPointer,rightPointer
+
+end if
+end while
+
+swap leftPointer,right
+return leftPointer
+end function
+
+//quicksort part
+procedure quicksort(left,right)
+if right-left<=0
+return
+else
+pivot=A[right]
+partition=partitionFunc(left,right,pivot)
+
+quicksort(left,partition-1)
+quicksort(partition+1,right)
+end if
+end procedure
